@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,8 +19,9 @@ import java.io.File;
 
 public class LastStudentActivity extends AppCompatActivity {
 
-    TextView name,surname,age,mark,university,curse;
-    Intent intent;
+    TextView name,surname,age,mark,university,curse,email,phone,network;
+    ImageView photo;
+    //Intent intent;
     Bundle bundle;
     Student student;
     Manager manager = new Manager();
@@ -36,6 +38,9 @@ public class LastStudentActivity extends AppCompatActivity {
         curse = (TextView) findViewById(R.id.curseIdStudent);
         university = (TextView) findViewById(R.id.universityIdStudent);
         mark = (TextView) findViewById(R.id.markIdStudent);
+        email = (TextView) findViewById(R.id.emailIdStudent);
+        phone = (TextView) findViewById(R.id.phoneIdStudent);
+        network =(TextView) findViewById(R.id.networkIdStudent);
 
         String FILENAME = "mineJson.json";
         File file = new File(super.getFilesDir(),FILENAME);
@@ -55,6 +60,9 @@ public class LastStudentActivity extends AppCompatActivity {
         curse.setText(student.getCurse());
         university.setText(student.getUniversity());
         mark.setText(String.valueOf(student.getMark()));
+        email.setText(String.valueOf(student.getEmail()));
+        phone.setText(String.valueOf(student.getPhone()));
+        network.setText(String.valueOf(student.getNetworkReff()));
     }
 
     private void installListenerForButton(){

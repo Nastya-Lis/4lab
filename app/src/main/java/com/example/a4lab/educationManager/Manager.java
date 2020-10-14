@@ -33,10 +33,10 @@ public class Manager{
             jsonManipulations.serializationToJson(file,person);
     }
 
- /*   public Person deserialize(){
-        Person personReturn = jsonManipulations.deserializationFromJson(file);
+    public ArrayList<Person> deserialize(){
+        ArrayList<Person> personReturn = jsonManipulations.deserializationFromJson(file);
         return personReturn;
-    }*/
+    }
 
     public void takeFileFromActivity(File file){
         this.file = file;

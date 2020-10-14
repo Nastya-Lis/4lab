@@ -24,6 +24,11 @@ public class ChooseActivity extends AppCompatActivity {
     final  String SURNAMEVALUE = "surnamePerson";
     final String AGEVALUE = "agePerson";
     final String CURSEVALUE = "cursePerson";
+    final String EMAILVALUE = "emailPerson";
+    final String PHONEVALUE = "phonePerson";
+    final String NETWORKVALUE = "networkPerson";
+    final String PHOTOVALUE = "photoPerson";
+
    // final String PERSONOBJECT = "person";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,6 +77,9 @@ public class ChooseActivity extends AppCompatActivity {
                 person.setSurName(bundle.get(SURNAMEVALUE).toString());
                 person.setAge( Integer.valueOf(bundle.get(AGEVALUE).toString()));
                 person.setCurse(bundle.get(CURSEVALUE).toString());
+                person.setEmail(bundle.get(EMAILVALUE).toString());
+                person.setPhone(bundle.get(PHONEVALUE).toString());
+                person.setNetworkReff(bundle.get(NETWORKVALUE).toString());
 
                 choosableIntent  =
                         new Intent(ChooseActivity.this,StudentActivity.class);
@@ -84,6 +92,10 @@ public class ChooseActivity extends AppCompatActivity {
                 person.setSurName(bundle.get(SURNAMEVALUE).toString());
                 person.setAge(Integer.valueOf(bundle.get(AGEVALUE).toString()));
                 person.setCurse(bundle.get(CURSEVALUE).toString());
+                person.setEmail(bundle.get(EMAILVALUE).toString());
+                person.setPhone(bundle.get(PHONEVALUE).toString());
+                person.setNetworkReff(bundle.get(NETWORKVALUE).toString());
+
                 choosableIntent  =
                         new Intent(ChooseActivity.this,ListenerActivity.class);
                 choosableIntent.putExtra(Listener.class.getSimpleName(),person);

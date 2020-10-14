@@ -1,27 +1,22 @@
 package com.example.a4lab.educationManager;
 
-import android.content.Context;
-import android.os.Environment;
 import android.util.Log;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import com.example.a4lab.MainActivity;
 import com.example.a4lab.units.Listener;
 import com.example.a4lab.units.Person;
 import com.example.a4lab.units.Student;
 
 import org.codehaus.jackson.map.ObjectMapper;
-import org.codehaus.jackson.map.SerializationConfig;
+import org.codehaus.jackson.type.TypeReference;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class JsonManipulations {
     ObjectMapper objectMapper;
+    ArrayList<Person> personList;
 
     public boolean isFileExists(File file) {
         if(file!=null) {
@@ -52,11 +47,24 @@ public class JsonManipulations {
 
       if(isFileExists(file)){
           objectMapper = new ObjectMapper();
+
           try {
-              if(person instanceof Student)
-              objectMapper.writerWithDefaultPrettyPrinter().writeValue(file,(Student)person);
+              if(person instanceof Student) {
+                  personList = getFromFileList(file);
+                  //new ArrayList<Person>();
+                  if(personList == null)
+                      personList = new ArrayList<>();
+                  personList.add((Student)person);
+                  objectMapper.writerWithDefaultPrettyPrinter().writeValue(file,
+                          personList);
+              }
               else if(person instanceof Listener){
-                  objectMapper.writerWithDefaultPrettyPrinter().writeValue(file,(Listener)person);
+                  personList = getFromFileList(file);
+                  if(personList == null)
+                      personList = new ArrayList<>();
+                  personList.add((Listener)person);
+                  objectMapper.writerWithDefaultPrettyPrinter().writeValue(file,
+                          personList);
               }
           }
           catch (IOException e) {
@@ -66,8 +74,24 @@ public class JsonManipulations {
 
     }
 
-   /* public Person deserializationFromJson(File file){
+    private ArrayList<Person> getFromFileList(File file){
         if(file!=null){
+            try {
+                objectMapper = new ObjectMapper();
+                personList = objectMapper.readValue(file, new TypeReference<ArrayList<Person>>(){});
+                return personList;
+            } catch (IOException e) {
+                Log.i("Log_json","Couldn't read file");
+                return null;
+            }
+        }
+        else{
+            return null;
+        }
+    }
+
+    public ArrayList<Person> deserializationFromJson(File file) {
+    /*    if(file!=null){
             try {
                objectMapper = new ObjectMapper();
                 Person person = objectMapper.readValue(file,Person.class);
@@ -79,6 +103,7 @@ public class JsonManipulations {
         }
         else{
             return null;
-        }
-    }*/
+        }*/
+      return getFromFileList(file);
+    }
 }

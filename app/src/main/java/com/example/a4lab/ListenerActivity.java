@@ -13,7 +13,7 @@ import com.example.a4lab.units.Student;
 
 public class ListenerActivity extends AppCompatActivity {
 
-    Listener listener;
+    Listener listener1;
     Listener sendListener;
     Bundle bundle;
     Intent intent;
@@ -26,8 +26,8 @@ public class ListenerActivity extends AppCompatActivity {
 
     private Listener setListenerData(){
         bundle = getIntent().getExtras();
-        listener = (Listener)  bundle.getSerializable(Listener.class.getSimpleName());
-        return listener;
+        listener1 = (Listener)  bundle.getSerializable(Listener.class.getSimpleName());
+        return listener1;
     }
 
     private void installListenerForButton(){
@@ -42,7 +42,8 @@ public class ListenerActivity extends AppCompatActivity {
                     case R.id.nextListenerActivity:
                         sendListener = setListenerData();
                         sendListener.setOrganization(
-                                ((EditText) findViewById(R.id.organizationId)).getText().toString());
+                                ((EditText) findViewById(R.id.organizationId)).
+                                        getText().toString());
                         intent = new Intent(ListenerActivity.this,
                                 LastActivityListener.class);
                         intent.putExtra(Listener.class.getSimpleName(),sendListener);

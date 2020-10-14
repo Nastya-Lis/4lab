@@ -10,6 +10,8 @@ import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
 
+    //Сделать работу с фотографией
+
     final String NAMEVALUE = "namePerson";
     final  String SURNAMEVALUE = "surnamePerson";
     final String AGEVALUE = "agePerson";
@@ -21,8 +23,6 @@ public class MainActivity extends AppCompatActivity {
 
     EditText name,surname,age,curse,email,phone,networkReference;
     ImageView photo;
-    String str;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,11 +50,10 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra(EMAILVALUE,email.getText().toString());
         intent.putExtra(PHONEVALUE,phone.getText().toString());
         intent.putExtra(NETWORKVALUE,networkReference.getText().toString());
-
         startActivity(intent);
     }
 
     public void setPicture(View view) {
-        
+
     }
 }
