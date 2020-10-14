@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LastStudentActivity">
+
+    <GridLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:columnCount="2"
+    >
+    <TextView
+    android:hint="@string/Name"
+    android:textSize="24dp">
+
+    </TextView>
+    <TextView
+        android:id="@+id/nameIdStudent"
+        android:textSize="24dp">
+    </TextView>
+
+    <TextView
+        android:hint="@string/SurName"
+        android:textSize="24dp">
+
+    </TextView>
+    <TextView
+        android:id="@+id/surnameIdStudent"
+        android:textSize="24dp">
+    </TextView>
+
+    <TextView
+        android:hint="@string/Age"
+        android:textSize="24dp">
+
+    </TextView>
+    <TextView
+        android:id="@+id/ageIdStudent"
+        android:textSize="24dp">
+    </TextView>
+
+    <TextView
+        android:hint="@string/Curse"
+        android:textSize="24dp">
+
+    </TextView>
+    <TextView
+        android:id="@+id/curseIdStudent"
+        android:textSize="24dp">
+    </TextView>
+
+    <TextView
+        android:hint="@string/University"
+        android:textSize="24dp">
+
+    </TextView>
+    <TextView
+        android:id="@+id/universityIdStudent"
+        android:textSize="24dp">
+    </TextView>
+
+    <TextView
+        android:hint="@string/Mark"
+        android:textSize="24dp">
+
+    </TextView>
+    <TextView
+        android:id="@+id/markIdStudent"
+        android:textSize="24dp">
+    </TextView>
+
+        <TextView
+            android:hint="@string/Email"
+            android:textSize="24dp">
+
+        </TextView>
+        <TextView
+            android:id="@+id/emailIdStudent"
+            android:textSize="24dp">
+        </TextView>
+
+        <TextView
+            android:hint="@string/Phone"
+            android:textSize="24dp">
+
+        </TextView>
+        <TextView
+            android:id="@+id/phoneIdStudent"
+            android:textSize="24dp">
+        </TextView>
+
+        <TextView
+            android:hint="@string/SocialNetwork"
+            android:textSize="24dp">
+
+        </TextView>
+        <TextView
+            android:id="@+id/networkIdStudent"
+            android:textSize="24dp">
+        </TextView>
+        <TextView
+            android:hint="@string/Photography"
+            android:textSize="24dp">
+
+        </TextView>
+        <TextView
+            android:id="@+id/photographyIdStudent"
+            android:textSize="24dp">
+        </TextView>
+
+        <Button
+            android:id="@+id/backLastActivityStudent"
+            android:layout_width="198dp"
+            android:layout_height="wrap_content"
+
+            android:text="Back"></Button>
+
+        <Button
+            android:id="@+id/saveLastActivityStudent"
+            android:layout_width="192dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:text="Save"></Button>
+    </GridLayout>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

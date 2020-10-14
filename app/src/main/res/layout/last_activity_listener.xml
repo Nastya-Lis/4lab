@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LastActivityListener">
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        >
+        <TextView
+            android:hint="@string/Name"
+            android:textSize="24dp">
+
+        </TextView>
+        <TextView
+            android:id="@+id/nameIdListener"
+            android:textSize="24dp">
+        </TextView>
+
+        <TextView
+            android:hint="@string/SurName"
+            android:textSize="24dp">
+
+        </TextView>
+        <TextView
+            android:id="@+id/surnameIdListener"
+            android:textSize="24dp">
+        </TextView>
+
+        <TextView
+            android:hint="@string/Age"
+            android:textSize="24dp">
+
+        </TextView>
+        <TextView
+            android:id="@+id/ageIdListener"
+            android:textSize="24dp">
+        </TextView>
+
+        <TextView
+            android:hint="@string/Curse"
+            android:textSize="24dp">
+
+        </TextView>
+        <TextView
+            android:id="@+id/curseIdListener"
+            android:textSize="24dp">
+        </TextView>
+
+        <TextView
+            android:hint="@string/Organization"
+            android:textSize="24dp">
+
+        </TextView>
+        <TextView
+            android:id="@+id/organizationIdListener"
+            android:textSize="24dp">
+        </TextView>
+
+        <TextView
+            android:hint="@string/Email"
+            android:textSize="24dp">
+
+        </TextView>
+        <TextView
+            android:id="@+id/emailIdListener"
+            android:textSize="24dp">
+        </TextView>
+
+        <TextView
+            android:hint="@string/Phone"
+            android:textSize="24dp">
+
+        </TextView>
+        <TextView
+            android:id="@+id/phoneIdListener"
+            android:textSize="24dp">
+        </TextView>
+
+        <TextView
+            android:hint="@string/SocialNetwork"
+            android:textSize="24dp">
+
+        </TextView>
+        <TextView
+            android:id="@+id/networkIdListener"
+            android:textSize="24dp">
+        </TextView>
+        <TextView
+            android:hint="@string/Photography"
+            android:textSize="24dp">
+
+        </TextView>
+        <TextView
+            android:id="@+id/photographyIdListener"
+            android:textSize="24dp">
+        </TextView>
+
+
+        <Button
+            android:id="@+id/backLastActivityListener"
+            android:layout_width="198dp"
+            android:layout_height="wrap_content"
+
+            android:text="Back"></Button>
+
+        <Button
+            android:id="@+id/saveLastActivityListener"
+            android:layout_width="192dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:text="Save"></Button>
+    </GridLayout>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

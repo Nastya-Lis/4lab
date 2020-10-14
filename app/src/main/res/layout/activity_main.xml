@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/Name"
+        android:textSize="17dp" />
+
+    <EditText
+        android:id="@+id/nameId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="17dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/SurName"
+        android:textSize="17dp" />
+
+    <EditText
+        android:id="@+id/surnameId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="17dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/Age"
+        android:textSize="17dp" />
+
+    <EditText
+        android:id="@+id/ageId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="17dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/Curse"
+        android:textSize="17dp" />
+
+    <EditText
+        android:id="@+id/curseId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="17dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/Email"
+        android:textSize="17dp" />
+
+    <EditText
+        android:id="@+id/emailId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="17dp" />
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/Phone"
+            android:textSize="17dp" />
+
+        <EditText
+            android:id="@+id/phoneId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="17dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/SocialNetwork"
+            android:textSize="17dp" />
+
+        <EditText
+            android:id="@+id/networkId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="17dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/Photography"
+        android:textSize="17dp" />
+
+        <GridLayout
+            android:layout_width="384dp"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/photoId"
+                android:layout_width="100dp"
+                android:layout_height="100dp" />
+
+            <Button
+                android:layout_marginLeft="30dp"
+                android:id="@+id/setPicture"
+                android:layout_width="169dp"
+                android:layout_height="wrap_content"
+                android:text="set picture"
+                android:onClick="setPicture"
+                >
+            </Button>
+
+        </GridLayout>
+
+    <Button
+    android:id="@+id/nextMain"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Next"
+    android:onClick="nextClick"
+    >
+    </Button>
+    </LinearLayout>
+</ScrollView>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

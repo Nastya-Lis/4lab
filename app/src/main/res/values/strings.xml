@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">4lab</string>
+    <string name="Name">Name:</string>
+    <string name="SurName">SurName:</string>
+    <string name="Student">Student:</string>
+    <string name="Listener">Listener:</string>
+    <string name="Age">Age:</string>
+    <string name="Curse">Curse:</string>
+    <string name="University">University:</string>
+    <string name="Mark">Mark:</string>
+    <string name="Organization">Organization:</string>
+    <string name="Email">Email:</string>
+    <string name="Phone">Telephone</string>
+    <string name="SocialNetwork">Social Network:</string>
+    <string name="Photography">Photography:</string>
+</resources>
