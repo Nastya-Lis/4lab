@@ -4,6 +4,7 @@ import android.util.Log;
 
 import com.example.a4lab.units.Listener;
 import com.example.a4lab.units.Person;
+import com.example.a4lab.units.PersonForJSON;
 import com.example.a4lab.units.Student;
 
 import org.codehaus.jackson.map.ObjectMapper;
@@ -16,7 +17,7 @@ import java.util.List;
 
 public class JsonManipulations {
     ObjectMapper objectMapper;
-    ArrayList<Person> personList;
+    PersonForJSON persons;
 
     public boolean isFileExists(File file) {
         if(file!=null) {
@@ -49,8 +50,16 @@ public class JsonManipulations {
           objectMapper = new ObjectMapper();
 
           try {
-              if(person instanceof Student) {
-                  personList = getFromFileList(file);
+
+              persons = getFromFileList(file);
+              if(persons == null){
+                  persons = new PersonForJSON();
+                  persons.listPerson = new ArrayList<>();
+              }
+              persons.listPerson.add(person);
+              objectMapper.writerWithDefaultPrettyPrinter().writeValue(file,persons);
+           /*   if(person instanceof Student) {
+                  persons = getFromFileList(file);
                   //new ArrayList<Person>();
                   if(personList == null)
                       personList = new ArrayList<>();
@@ -59,13 +68,13 @@ public class JsonManipulations {
                           personList);
               }
               else if(person instanceof Listener){
-                  personList = getFromFileList(file);
+                  persons = getFromFileList(file);
                   if(personList == null)
                       personList = new ArrayList<>();
                   personList.add((Listener)person);
                   objectMapper.writerWithDefaultPrettyPrinter().writeValue(file,
                           personList);
-              }
+              }*/
           }
           catch (IOException e) {
              Log.i("Log_json","Oops, your serialization doesn't work");
@@ -74,12 +83,12 @@ public class JsonManipulations {
 
     }
 
-    private ArrayList<Person> getFromFileList(File file){
+    private PersonForJSON getFromFileList(File file){
         if(file!=null){
             try {
                 objectMapper = new ObjectMapper();
-                personList = objectMapper.readValue(file, new TypeReference<ArrayList<Person>>(){});
-                return personList;
+                persons = objectMapper.readValue(file,PersonForJSON.class);
+                return persons;
             } catch (IOException e) {
                 Log.i("Log_json","Couldn't read file");
                 return null;
@@ -90,7 +99,7 @@ public class JsonManipulations {
         }
     }
 
-    public ArrayList<Person> deserializationFromJson(File file) {
+    public PersonForJSON deserializationFromJson(File file) {
     /*    if(file!=null){
             try {
                objectMapper = new ObjectMapper();

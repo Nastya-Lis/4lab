@@ -1,5 +1,6 @@
 package com.example.a4lab;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -13,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.a4lab.educationManager.Manager;
+import com.example.a4lab.units.PersonForJSON;
 import com.example.a4lab.units.Student;
 
 import java.io.File;
@@ -25,7 +27,7 @@ public class LastStudentActivity extends AppCompatActivity {
     Bundle bundle;
     Student student;
     Manager manager = new Manager();
-
+    File file;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,12 +45,54 @@ public class LastStudentActivity extends AppCompatActivity {
         network =(TextView) findViewById(R.id.networkIdStudent);
 
         String FILENAME = "mineJson.json";
-        File file = new File(super.getFilesDir(),FILENAME);
+        file = new File(super.getFilesDir(),FILENAME);
         manager.takeFileFromActivity(file);
 
         show();
 
         installListenerForButton();
+    }
+
+    private AlertDialog.Builder showAllPerson(){
+        if(file != null){
+            PersonForJSON persons = manager.deserialize();
+            StringBuilder allUsers = new StringBuilder();
+            if(persons.listPerson.size()!=0){
+
+                for (int i = 0 ; i < persons.listPerson.size();i++) {
+                   /* allUsers += personList[i].getName() + " " + person.getSurName() + " " +
+                            person.getCurse() + "\n";*/
+                 /*   if(personList.get(i) instanceof Student){
+                        allUsers.append(personList.get(i).getName() + " " +
+                                personList.get(i).getSurName() + " " +
+                                personList.get(i).getCurse() + "\n");
+                    }
+                    else if(personList.get(i) instanceof Listener){
+                        allUsers.append(personList.get(i).getName() + " " +
+                                 personList.get(i).getSurName() + " " +
+                                personList.get(i).getCurse() + "\n");
+                    }*/
+                    allUsers.append(persons.listPerson.get(i).getName()+ " " +
+                            persons.listPerson.get(i).getSurName() + " " +
+                            persons.listPerson.get(i).getCurse() + "\n");
+                }
+            }
+
+            /*Toast.makeText(getApplicationContext(),allUsers,Toast.LENGTH_LONG).show();*/
+
+            AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
+            alertDialog.setTitle("All users").setMessage(allUsers).
+                    setPositiveButton("Ok",null);
+            return alertDialog;
+            //  alertDialog.create().show();
+
+        }
+        else{
+            AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
+            alertDialog.setTitle("All users").setMessage("Something is going wrong").
+                    setPositiveButton("Ok",null);
+            return alertDialog;
+        }
     }
 
     private void show(){
@@ -76,6 +120,8 @@ public class LastStudentActivity extends AppCompatActivity {
                         break;
                     case R.id.saveLastActivityStudent:
                         manager.serialize(student);
+                        AlertDialog.Builder alert = showAllPerson();
+                        alert.show();
                         Toast.makeText
                                 (getApplicationContext(), "Writing in file is successfully done",
                                         Toast.LENGTH_LONG).show();

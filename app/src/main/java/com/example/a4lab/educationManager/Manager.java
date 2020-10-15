@@ -7,6 +7,7 @@ import androidx.annotation.Nullable;
 
 import com.example.a4lab.units.Listener;
 import com.example.a4lab.units.Person;
+import com.example.a4lab.units.PersonForJSON;
 import com.example.a4lab.units.Student;
 
 
@@ -33,8 +34,8 @@ public class Manager{
             jsonManipulations.serializationToJson(file,person);
     }
 
-    public ArrayList<Person> deserialize(){
-        ArrayList<Person> personReturn = jsonManipulations.deserializationFromJson(file);
+    public PersonForJSON deserialize(){
+        PersonForJSON personReturn = jsonManipulations.deserializationFromJson(file);
         return personReturn;
     }
 

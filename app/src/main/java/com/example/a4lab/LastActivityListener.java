@@ -15,6 +15,7 @@ import android.widget.Toast;
 import com.example.a4lab.educationManager.Manager;
 import com.example.a4lab.units.Listener;
 import com.example.a4lab.units.Person;
+import com.example.a4lab.units.PersonForJSON;
 import com.example.a4lab.units.Student;
 
 import java.io.File;
@@ -66,13 +67,13 @@ public class LastActivityListener extends AppCompatActivity {
         network.setText(String.valueOf(listener1.getNetworkReff()));
     }
 
-    private void showAllPerson(){
+    private AlertDialog.Builder showAllPerson(){
         if(file != null){
-            ArrayList<Person> personList = manager.deserialize();
+            PersonForJSON persons = manager.deserialize();
             StringBuilder allUsers = new StringBuilder();
-            if(personList.size()!=0){
+            if(persons.listPerson.size()!=0){
 
-                for (int i = 0 ; i < personList.size();i++) {
+                for (int i = 0 ; i < persons.listPerson.size();i++) {
                    /* allUsers += personList[i].getName() + " " + person.getSurName() + " " +
                             person.getCurse() + "\n";*/
                  /*   if(personList.get(i) instanceof Student){
@@ -85,7 +86,9 @@ public class LastActivityListener extends AppCompatActivity {
                                  personList.get(i).getSurName() + " " +
                                 personList.get(i).getCurse() + "\n");
                     }*/
-                  allUsers.append(personList.get(i).getName());
+                  allUsers.append(persons.listPerson.get(i).getName()+ " " +
+                          persons.listPerson.get(i).getSurName() + " " +
+                          persons.listPerson.get(i).getCurse() + "\n");
                 }
             }
 
@@ -94,8 +97,15 @@ public class LastActivityListener extends AppCompatActivity {
             AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
             alertDialog.setTitle("All users").setMessage(allUsers).
                     setPositiveButton("Ok",null);
-            alertDialog.create().show();
+            return alertDialog;
+          //  alertDialog.create().show();
 
+        }
+        else{
+            AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
+            alertDialog.setTitle("All users").setMessage("Something is going wrong").
+                    setPositiveButton("Ok",null);
+            return alertDialog;
         }
     }
 
@@ -110,10 +120,12 @@ public class LastActivityListener extends AppCompatActivity {
                         break;
                     case R.id.saveLastActivityListener:
                         manager.serialize(listener1);
+                        AlertDialog.Builder alert = showAllPerson();
+                        alert.show();
                         Toast.makeText
                                 (getApplicationContext(), "Writing in file is successfully done",
                                         Toast.LENGTH_LONG).show();
-                        showAllPerson();
+
                         break;
 
                 }
