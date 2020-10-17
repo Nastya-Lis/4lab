@@ -124,6 +124,15 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
             android:text="Save"></Button>
+
+        <Button
+            android:id="@+id/listPersonsStudentFrom"
+            android:layout_height="wrap_content"
+            android:layout_columnSpan="2"
+            android:layout_marginLeft="60dp"
+            android:text="watch more person's information"
+            >
+        </Button>
     </GridLayout>
 
 </androidx.appcompat.widget.LinearLayoutCompat>

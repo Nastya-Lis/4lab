@@ -60,31 +60,20 @@ public class LastStudentActivity extends AppCompatActivity {
             if(persons.listPerson.size()!=0){
 
                 for (int i = 0 ; i < persons.listPerson.size();i++) {
-                   /* allUsers += personList[i].getName() + " " + person.getSurName() + " " +
-                            person.getCurse() + "\n";*/
-                 /*   if(personList.get(i) instanceof Student){
-                        allUsers.append(personList.get(i).getName() + " " +
-                                personList.get(i).getSurName() + " " +
-                                personList.get(i).getCurse() + "\n");
-                    }
-                    else if(personList.get(i) instanceof Listener){
-                        allUsers.append(personList.get(i).getName() + " " +
-                                 personList.get(i).getSurName() + " " +
-                                personList.get(i).getCurse() + "\n");
-                    }*/
+
                     allUsers.append(persons.listPerson.get(i).getName()+ " " +
                             persons.listPerson.get(i).getSurName() + " " +
                             persons.listPerson.get(i).getCurse() + "\n");
                 }
             }
 
-            /*Toast.makeText(getApplicationContext(),allUsers,Toast.LENGTH_LONG).show();*/
+
 
             AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
             alertDialog.setTitle("All users").setMessage(allUsers).
                     setPositiveButton("Ok",null);
             return alertDialog;
-            //  alertDialog.create().show();
+
 
         }
         else{
@@ -123,8 +112,16 @@ public class LastStudentActivity extends AppCompatActivity {
                         AlertDialog.Builder alert = showAllPerson();
                         alert.show();
                         Toast.makeText
-                                (getApplicationContext(), "Writing in file is successfully done",
+                                (getApplicationContext(),
+                                        "Writing in file is successfully done",
                                         Toast.LENGTH_LONG).show();
+                        break;
+                    case R.id.listPersonsStudentFrom:
+                        PersonForJSON personForJSON = manager.deserialize();
+                        Intent intent = new Intent(LastStudentActivity.this,
+                                ListActivity.class);
+                        intent.putExtra(PersonForJSON.class.getSimpleName(),personForJSON);
+                        startActivity(intent);
                         break;
 
                 }

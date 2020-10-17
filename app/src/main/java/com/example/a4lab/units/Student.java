@@ -1,9 +1,5 @@
 package com.example.a4lab.units;
 
-
-
-import java.util.Optional;
-
 public class Student extends Person {
     String university;
     Integer mark;
@@ -42,6 +38,4 @@ public class Student extends Person {
                 '}';
     }
 
-//    static public Optional<University> giveSomeStaffs(Student stud)
-//    {return Optional.ofNullable(stud.getUniversity());}
 }

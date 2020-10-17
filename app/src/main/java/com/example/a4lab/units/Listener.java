@@ -1,7 +1,6 @@
 package com.example.a4lab.units;
 
 public class Listener extends Person {
-   // Person person;
     String Organization;
 
     public Listener(){

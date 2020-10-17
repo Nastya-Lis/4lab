@@ -74,25 +74,12 @@ public class LastActivityListener extends AppCompatActivity {
             if(persons.listPerson.size()!=0){
 
                 for (int i = 0 ; i < persons.listPerson.size();i++) {
-                   /* allUsers += personList[i].getName() + " " + person.getSurName() + " " +
-                            person.getCurse() + "\n";*/
-                 /*   if(personList.get(i) instanceof Student){
-                        allUsers.append(personList.get(i).getName() + " " +
-                                personList.get(i).getSurName() + " " +
-                                personList.get(i).getCurse() + "\n");
-                    }
-                    else if(personList.get(i) instanceof Listener){
-                        allUsers.append(personList.get(i).getName() + " " +
-                                 personList.get(i).getSurName() + " " +
-                                personList.get(i).getCurse() + "\n");
-                    }*/
+
                   allUsers.append(persons.listPerson.get(i).getName()+ " " +
                           persons.listPerson.get(i).getSurName() + " " +
                           persons.listPerson.get(i).getCurse() + "\n");
                 }
             }
-
-            /*Toast.makeText(getApplicationContext(),allUsers,Toast.LENGTH_LONG).show();*/
 
             AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
             alertDialog.setTitle("All users").setMessage(allUsers).
@@ -127,6 +114,13 @@ public class LastActivityListener extends AppCompatActivity {
                                         Toast.LENGTH_LONG).show();
 
                         break;
+                    case R.id.listPersonListenerFrom:
+                        PersonForJSON personForJSON = manager.deserialize();
+                        Intent intent = new Intent(LastActivityListener.this,
+                                ListActivity.class);
+                        intent.putExtra(PersonForJSON.class.getSimpleName(),personForJSON);
+                        startActivity(intent);
+                        break;
 
                 }
             }
@@ -134,9 +128,11 @@ public class LastActivityListener extends AppCompatActivity {
 
         Button btn1 = (Button) findViewById(R.id.backLastActivityListener);
         Button btn2 = (Button) findViewById(R.id.saveLastActivityListener);
+        Button btn3 = (Button) findViewById(R.id.listPersonListenerFrom);
+
         btn1.setOnClickListener(listener);
         btn2.setOnClickListener(listener);
-
+        btn3.setOnClickListener(listener);
 
     }
 }

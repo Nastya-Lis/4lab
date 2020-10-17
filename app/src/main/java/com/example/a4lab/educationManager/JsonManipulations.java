@@ -58,23 +58,6 @@ public class JsonManipulations {
               }
               persons.listPerson.add(person);
               objectMapper.writerWithDefaultPrettyPrinter().writeValue(file,persons);
-           /*   if(person instanceof Student) {
-                  persons = getFromFileList(file);
-                  //new ArrayList<Person>();
-                  if(personList == null)
-                      personList = new ArrayList<>();
-                  personList.add((Student)person);
-                  objectMapper.writerWithDefaultPrettyPrinter().writeValue(file,
-                          personList);
-              }
-              else if(person instanceof Listener){
-                  persons = getFromFileList(file);
-                  if(personList == null)
-                      personList = new ArrayList<>();
-                  personList.add((Listener)person);
-                  objectMapper.writerWithDefaultPrettyPrinter().writeValue(file,
-                          personList);
-              }*/
           }
           catch (IOException e) {
              Log.i("Log_json","Oops, your serialization doesn't work");
@@ -100,19 +83,6 @@ public class JsonManipulations {
     }
 
     public PersonForJSON deserializationFromJson(File file) {
-    /*    if(file!=null){
-            try {
-               objectMapper = new ObjectMapper();
-                Person person = objectMapper.readValue(file,Person.class);
-                return person;
-            } catch (IOException e) {
-                Log.i("Log_json","Couldn't read file");
-                return null;
-            }
-        }
-        else{
-            return null;
-        }*/
       return getFromFileList(file);
     }
 }
