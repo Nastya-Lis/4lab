@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".CurrentPersonActivity">
+
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        >
+        <TextView
+            android:hint="@string/Name"
+            android:textSize="24dp">
+
+        </TextView>
+        <TextView
+            android:id="@+id/nameIdCurrent"
+            android:textSize="24dp">
+        </TextView>
+
+        <TextView
+            android:hint="@string/SurName"
+            android:textSize="24dp">
+
+        </TextView>
+        <TextView
+            android:id="@+id/surnameIdCurrent"
+            android:textSize="24dp">
+        </TextView>
+
+        <TextView
+            android:hint="@string/Age"
+            android:textSize="24dp">
+
+        </TextView>
+        <TextView
+            android:id="@+id/ageIdCurrent"
+            android:textSize="24dp">
+        </TextView>
+
+        <TextView
+            android:hint="@string/Curse"
+            android:textSize="24dp">
+
+        </TextView>
+        <TextView
+            android:id="@+id/curseIdCurrent"
+            android:textSize="24dp">
+        </TextView>
+
+        <TextView
+            android:id="@+id/uniOrgHintId"
+            android:hint="University:"
+            android:textSize="24dp">
+
+        </TextView>
+        <TextView
+            android:id="@+id/universityAndOrganizationIdCurrent"
+            android:textSize="24dp">
+        </TextView>
+
+        <TextView
+            android:id="@+id/markHintId"
+            android:hint="@string/markHint"
+            android:textSize="24dp"
+            android:visibility="invisible">
+
+        </TextView>
+        <TextView
+            android:id="@+id/markIdCurrent"
+            android:textSize="24dp"
+            android:visibility="invisible"
+            >
+        </TextView>
+
+    </GridLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/emailIdCurrent"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="Email"></Button>
+
+        <Button
+            android:id="@+id/phoneIdCurrent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Phone"></Button>
+
+        <Button
+            android:id="@+id/photoIdCurrent"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="Photo"></Button>
+
+        <Button
+            android:id="@+id/networkIdCurrent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Social network"></Button>
+
+    </LinearLayout>
+
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>
