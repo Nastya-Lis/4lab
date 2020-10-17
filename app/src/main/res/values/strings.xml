@@ -13,4 +13,6 @@
     <string name="Phone">Telephone</string>
     <string name="SocialNetwork">Social Network:</string>
     <string name="Photography">Photography:</string>
+    <string name="uniAndOrgan">University:</string>
+    <string name="markHint">Mark:</string>
 </resources>

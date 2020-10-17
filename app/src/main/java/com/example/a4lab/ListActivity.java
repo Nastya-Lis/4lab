@@ -21,7 +21,7 @@ public class ListActivity extends AppCompatActivity {
         PersonForJSON personForJSON =(PersonForJSON)
                 bundle.getSerializable(PersonForJSON.class.getSimpleName());
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.myRecycler);
-        recyclerView.setAdapter(new PersonAdapter(personForJSON));
+        recyclerView.setAdapter(new PersonAdapter(personForJSON,getApplicationContext()));
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
     }

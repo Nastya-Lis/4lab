@@ -130,9 +130,11 @@ public class LastStudentActivity extends AppCompatActivity {
 
         Button btn1 = (Button) findViewById(R.id.backLastActivityStudent);
         Button btn2 = (Button) findViewById(R.id.saveLastActivityStudent);
+        Button btn3 = (Button) findViewById(R.id.listPersonsStudentFrom);
+
         btn1.setOnClickListener(listener);
         btn2.setOnClickListener(listener);
-
+        btn3.setOnClickListener(listener);
 
     }
 }
