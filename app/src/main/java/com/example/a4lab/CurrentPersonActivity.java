@@ -2,6 +2,8 @@ package com.example.a4lab;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -98,6 +100,32 @@ public class CurrentPersonActivity extends AppCompatActivity {
         }
 
     }
+
+
+
+    public void emailCross(View view) {
+        //String email = "bankay.kotopes@mail.ru";
+        Intent intent = new Intent(Intent.ACTION_SENDTO,Uri.parse("mailto:"
+                + getCurrentPersonFromPreviousActivity().getEmail()));
+        startActivity(intent);
+    }
+
+    public void phoneCross(View view) {
+        String telephone = getCurrentPersonFromPreviousActivity().getPhone();
+        Intent intent = new Intent(Intent.ACTION_DIAL);
+        intent.setData(Uri.parse("tel:"+ telephone));
+        startActivity(intent);
+    }
+
+    public void photoCross(View view) {
+    }
+
+    public void networkCross(View view) {
+
+        Intent intent = new Intent(Intent.ACTION_VIEW,Uri.parse("https://vk.com/ksyusha_8"));
+        startActivity(intent);
+    }
+
 
     private enum PersonInstances{
         STUDENT,LISTENER,NANOFTHEM;

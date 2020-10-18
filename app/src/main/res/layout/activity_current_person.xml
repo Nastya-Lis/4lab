@@ -90,25 +90,37 @@
             android:id="@+id/emailIdCurrent"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
-            android:text="Email"></Button>
+            android:text="Email"
+            android:onClick="emailCross">
+
+        </Button>
 
         <Button
             android:id="@+id/phoneIdCurrent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Phone"></Button>
+            android:text="Phone"
+            android:onClick="phoneCross">
+
+        </Button>
 
         <Button
             android:id="@+id/photoIdCurrent"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
-            android:text="Photo"></Button>
+            android:text="Photo"
+            android:onClick="photoCross">
+
+        </Button>
 
         <Button
             android:id="@+id/networkIdCurrent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Social network"></Button>
+            android:text="Social network"
+            android:onClick="networkCross">
+
+        </Button>
 
     </LinearLayout>
 
