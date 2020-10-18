@@ -1,5 +1,6 @@
 package com.example.a4lab;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -121,9 +122,17 @@ public class CurrentPersonActivity extends AppCompatActivity {
     }
 
     public void networkCross(View view) {
-
-        Intent intent = new Intent(Intent.ACTION_VIEW,Uri.parse("https://vk.com/ksyusha_8"));
-        startActivity(intent);
+        try{
+            Intent intent = new Intent(Intent.ACTION_VIEW,
+                    Uri.parse(getCurrentPersonFromPreviousActivity().getNetworkReff()));
+            startActivity(intent);
+        }
+        catch(Exception e){
+            AlertDialog.Builder alert = new AlertDialog.Builder(this);
+            alert.setTitle("Error message").setMessage("Invalid reference").
+                    setPositiveButton("Ok",null);
+            alert.create().show();
+        }
     }
 
 
