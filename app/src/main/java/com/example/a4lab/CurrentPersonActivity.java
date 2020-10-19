@@ -18,7 +18,7 @@ public class CurrentPersonActivity extends AppCompatActivity {
 
     TextView name,surname,age,curse,uniAndOrgan,mark,
     uniandOrganHint,markHint;
-    ImageView photo;
+
     final String university = "University:";
     final String organization = "Organization:";
 
@@ -66,8 +66,10 @@ public class CurrentPersonActivity extends AppCompatActivity {
                 mark.setVisibility(View.VISIBLE);
                 markHint.setVisibility(View.VISIBLE);
             }
-            if(uniandOrganHint.getHint() == organization)
-                uniandOrganHint.setHint(university);
+            if(uniandOrganHint.getText().equals(organization))
+                uniandOrganHint.setText(university);
+            else
+                uniAndOrgan.setText(organization);
         }
         else if(personInstances == PersonInstances.LISTENER){
 
@@ -75,8 +77,10 @@ public class CurrentPersonActivity extends AppCompatActivity {
                 mark.setVisibility(View.INVISIBLE);
                 markHint.setVisibility(View.INVISIBLE);
             }
-            if(uniAndOrgan.getHint() == university)
+            if(uniAndOrgan.getText().equals(university))
                 uniAndOrgan.setText(organization);
+            else
+                uniAndOrgan.setText(university);
         }
     }
 

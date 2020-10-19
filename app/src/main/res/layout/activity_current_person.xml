@@ -56,7 +56,7 @@
 
         <TextView
             android:id="@+id/uniOrgHintId"
-            android:hint="University:"
+            android:text="University:"
             android:textSize="24dp">
 
         </TextView>

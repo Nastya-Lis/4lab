@@ -2,10 +2,12 @@ package com.example.a4lab.recyclerViewPack;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -34,6 +36,7 @@ public class PersonAdapter extends RecyclerView.Adapter<PersonAdapter.MyViewHold
     class MyViewHolder extends RecyclerView.ViewHolder {
 
         TextView name,surname,age,curse,instance;
+        ImageView photo;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             name = (TextView) itemView.findViewById(R.id.nameElementId);
@@ -41,6 +44,7 @@ public class PersonAdapter extends RecyclerView.Adapter<PersonAdapter.MyViewHold
             age = (TextView) itemView.findViewById(R.id.ageElementId);
             curse = (TextView) itemView.findViewById(R.id.curseElementId);
             instance = (TextView) itemView.findViewById(R.id.instanceElementId);
+            photo = (ImageView) itemView.findViewById(R.id.pictureElementId);
         }
     }
 
@@ -77,6 +81,7 @@ public class PersonAdapter extends RecyclerView.Adapter<PersonAdapter.MyViewHold
         holder.surname.setText(person.getSurName());
         holder.age.setText(String.valueOf(person.getAge()));
         holder.curse.setText(person.getCurse());
+        holder.photo.setImageURI(Uri.parse(person.getPhotography()));
     }
 
     @Override

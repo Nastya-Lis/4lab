@@ -11,13 +11,11 @@
         android:layout_height="wrap_content"
        >
 
-        <TextView
+        <ImageView
             android:id="@+id/pictureElementId"
             android:layout_width="118dp"
-            android:layout_height="124dp"
-            android:background="@android:color/darker_gray"
-            android:text="здесь должна быть картинка"
-            android:textSize="20dp"></TextView>
+            android:layout_height="124dp">
+        </ImageView>
 
         <LinearLayout
             android:layout_width="match_parent"
