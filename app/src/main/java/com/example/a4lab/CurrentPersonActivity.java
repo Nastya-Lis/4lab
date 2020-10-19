@@ -109,7 +109,6 @@ public class CurrentPersonActivity extends AppCompatActivity {
 
 
     public void emailCross(View view) {
-        //String email = "bankay.kotopes@mail.ru";
         Intent intent = new Intent(Intent.ACTION_SENDTO,Uri.parse("mailto:"
                 + getCurrentPersonFromPreviousActivity().getEmail()));
         startActivity(intent);

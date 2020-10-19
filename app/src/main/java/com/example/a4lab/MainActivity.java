@@ -58,8 +58,6 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(Intent.ACTION_PICK);
                 intent.setType("image/*");
                 startActivityForResult(intent, Pick_image);
-//                Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-//                startActivityForResult(cameraIntent, Pick_image);
             }
         });
     }
@@ -71,19 +69,11 @@ public class MainActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, imageReturnedIntent);
 
 
-       /* if (requestCode == Pick_image) {
-            Bitmap thumbnail = (Bitmap) imageReturnedIntent.getExtras().get("data");
-            ImageView ivCamera = (ImageView) findViewById(R.id.photoId);
-            ivCamera.setImageBitmap(thumbnail);
-        }*/
-
         switch (requestCode) {
             case Pick_image:
                 if (resultCode == RESULT_OK) {
                     try {
 
-                        //Получаем URI изображения, преобразуем его в Bitmap
-                        //объект и отображаем в элементе ImageView нашего интерфейса:
                         final Uri imageUri = imageReturnedIntent.getData();
                         photoUri = imageUri;
                         final InputStream imageStream = getContentResolver().openInputStream(imageUri);

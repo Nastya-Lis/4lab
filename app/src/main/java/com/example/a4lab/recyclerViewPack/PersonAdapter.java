@@ -53,7 +53,7 @@ public class PersonAdapter extends RecyclerView.Adapter<PersonAdapter.MyViewHold
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_example_template,
-                parent,false);
+                parent, false);
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view1) {
