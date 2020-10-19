@@ -96,10 +96,12 @@
             android:textSize="24dp">
 
         </TextView>
-        <TextView
+        <ImageView
             android:id="@+id/photographyIdListener"
-            android:textSize="24dp">
-        </TextView>
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            >
+        </ImageView>
 
 
         <Button

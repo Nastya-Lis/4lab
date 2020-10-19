@@ -4,6 +4,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -18,6 +19,7 @@ import com.example.a4lab.units.PersonForJSON;
 import com.example.a4lab.units.Student;
 
 import java.io.File;
+import java.net.URI;
 
 public class LastStudentActivity extends AppCompatActivity {
 
@@ -43,6 +45,7 @@ public class LastStudentActivity extends AppCompatActivity {
         email = (TextView) findViewById(R.id.emailIdStudent);
         phone = (TextView) findViewById(R.id.phoneIdStudent);
         network =(TextView) findViewById(R.id.networkIdStudent);
+        photo = (ImageView) findViewById(R.id.photographyIdStudent);
 
         String FILENAME = "mineJson.json";
         file = new File(super.getFilesDir(),FILENAME);
@@ -96,6 +99,7 @@ public class LastStudentActivity extends AppCompatActivity {
         email.setText(String.valueOf(student.getEmail()));
         phone.setText(String.valueOf(student.getPhone()));
         network.setText(String.valueOf(student.getNetworkReff()));
+        photo.setImageURI(Uri.parse(student.getPhotography()));
     }
 
     private void installListenerForButton(){

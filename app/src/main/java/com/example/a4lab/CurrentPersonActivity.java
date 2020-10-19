@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.a4lab.units.Listener;
@@ -16,13 +17,12 @@ import com.example.a4lab.units.Student;
 public class CurrentPersonActivity extends AppCompatActivity {
 
     TextView name,surname,age,curse,uniAndOrgan,mark,
-    uniandOrganHint,markHint,
-            email,phone,network;
-
+    uniandOrganHint,markHint;
+    ImageView photo;
     final String university = "University:";
     final String organization = "Organization:";
 
-    //ImageView photo;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,7 +75,7 @@ public class CurrentPersonActivity extends AppCompatActivity {
                 mark.setVisibility(View.INVISIBLE);
                 markHint.setVisibility(View.INVISIBLE);
             }
-            if(uniAndOrgan.getText() == university)
+            if(uniAndOrgan.getHint() == university)
                 uniAndOrgan.setText(organization);
         }
     }
@@ -119,7 +119,12 @@ public class CurrentPersonActivity extends AppCompatActivity {
     }
 
     public void photoCross(View view) {
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setDataAndType(Uri.parse(getCurrentPersonFromPreviousActivity().getPhotography()),
+                "image/*");
+        startActivity(intent);
     }
+
 
     public void networkCross(View view) {
         try{

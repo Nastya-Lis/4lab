@@ -3,6 +3,7 @@ package com.example.a4lab;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -30,6 +31,8 @@ public class ChooseActivity extends AppCompatActivity {
     final String PHOTOVALUE = "photoPerson";
 
    // final String PERSONOBJECT = "person";
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -81,6 +84,8 @@ public class ChooseActivity extends AppCompatActivity {
                 person.setPhone(bundle.get(PHONEVALUE).toString());
                 person.setNetworkReff(bundle.get(NETWORKVALUE).toString());
 
+                person.setPhotography(bundle.get(PHOTOVALUE).toString());
+
                 choosableIntent  =
                         new Intent(ChooseActivity.this,StudentActivity.class);
                 choosableIntent.putExtra(Student.class.getSimpleName(),person);
@@ -95,6 +100,8 @@ public class ChooseActivity extends AppCompatActivity {
                 person.setEmail(bundle.get(EMAILVALUE).toString());
                 person.setPhone(bundle.get(PHONEVALUE).toString());
                 person.setNetworkReff(bundle.get(NETWORKVALUE).toString());
+
+                person.setPhotography(bundle.get(PHOTOVALUE).toString());
 
                 choosableIntent  =
                         new Intent(ChooseActivity.this,ListenerActivity.class);

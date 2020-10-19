@@ -112,7 +112,8 @@
             <ImageView
                 android:id="@+id/photoId"
                 android:layout_width="100dp"
-                android:layout_height="100dp" />
+                android:layout_height="100dp"
+                android:src="@drawable/ic_launcher_background"/>
 
             <Button
                 android:layout_marginLeft="30dp"
@@ -120,7 +121,6 @@
                 android:layout_width="169dp"
                 android:layout_height="wrap_content"
                 android:text="set picture"
-                android:onClick="setPicture"
                 >
             </Button>
 

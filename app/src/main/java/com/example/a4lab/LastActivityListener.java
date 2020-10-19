@@ -4,6 +4,8 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -44,6 +46,7 @@ public class LastActivityListener extends AppCompatActivity {
         email = (TextView) findViewById(R.id.emailIdListener);
         phone = (TextView) findViewById(R.id.phoneIdListener);
         network =(TextView) findViewById(R.id.networkIdListener);
+        photo = (ImageView) findViewById(R.id.photographyIdListener);
 
         String FILENAME = "mineJson.json";
         file = new File(super.getFilesDir(),FILENAME);
@@ -65,6 +68,7 @@ public class LastActivityListener extends AppCompatActivity {
         email.setText(String.valueOf(listener1.getEmail()));
         phone.setText(String.valueOf(listener1.getPhone()));
         network.setText(String.valueOf(listener1.getNetworkReff()));
+        photo.setImageURI(Uri.parse(listener1.getPhotography()));
     }
 
     private AlertDialog.Builder showAllPerson(){
