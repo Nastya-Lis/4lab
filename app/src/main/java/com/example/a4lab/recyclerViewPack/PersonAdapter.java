@@ -54,16 +54,7 @@ public class PersonAdapter extends RecyclerView.Adapter<PersonAdapter.MyViewHold
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_example_template,
                 parent, false);
-        view.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view1) {
-                Intent intent = new Intent(context, CurrentPersonActivity.class);
-                int index = parent.indexOfChild(view1);
-                Person personSend = personForJSON.listPerson.get(index);
-                intent.putExtra(Person.class.getSimpleName(),personSend);
-                context.startActivity(intent);
-            }
-        });
+
         return new MyViewHolder(view);
     }
 
@@ -82,6 +73,16 @@ public class PersonAdapter extends RecyclerView.Adapter<PersonAdapter.MyViewHold
         holder.age.setText(String.valueOf(person.getAge()));
         holder.curse.setText(person.getCurse());
         holder.photo.setImageURI(Uri.parse(person.getPhotography()));
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view1) {
+                Intent intent = new Intent(context, CurrentPersonActivity.class);
+                Person personSend = personForJSON.listPerson.get(position);
+                intent.putExtra(Person.class.getSimpleName(),personSend);
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
